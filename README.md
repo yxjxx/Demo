@@ -5,6 +5,15 @@ xcodebuild clean & xcodebuild -workspace /Users/yxj/Desktop/Demo/Demo.xcworkspac
 ```
 
 ```
+/// Tries to detect a compilation database location and load it.
+  ///
+  /// Looks for a compilation database in all parent paths of file 'SourceFile'
+  /// by calling loadFromDirectory.
+  static std::unique_ptr<CompilationDatabase>
+  autoDetectFromSource(StringRef SourceFile, std::string &ErrorMessage);
+```
+
+```
 /Users/yxj/Developer/LLVM/llvm-project/build/Debug/bin/LibToolingDemo /Users/yxj/Desktop/Demo/Demo/ViewController.m -- objective-c -arch x86_64 -std=gnu99 -fobjc-arc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -mios-simulator-version-min=8.0 -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include -v
 ```
 
@@ -61,3 +70,26 @@ End(test LibToolingDemo)
 1 error generated.
 Error while processing /Users/yxj/Desktop/Demo/Demo/ViewController.m.
 ```
+
+在需要分析的工程根目录生成 compile_commands.json, 注意需要全新编译。
+```
+xcodebuild clean
+xcodebuild -workspace /Users/yxj/Desktop/Demo/Demo.xcworkspace -scheme Demo -configuration Release | xcpretty -r json-compilation-database --output ./compile_commands.json
+```
+在项目Build Setting中搜索index并将Enable Index-While-Building Functionality选项设置为NO
+
+
+
+![](https://p.ipic.vip/rtl5qb.jpg)
+
+
+clang tool 会 autoDetectFromSource 去找 compile_commands.json 理论上不需要额外参数
+```
+/Users/yxj/Developer/LLVM/llvm-project/build/Debug/bin/LibToolingDemo /Users/yxj/Desktop/Demo/Demo/ViewController.m
+```
+
+-fmodule-format=raw
+会导致
+Assertion failed: (!HasError && "Cannot get value when an error exists!"), function getStorage, file Error.h, line 671.
+当前通过修改源码解决
+
