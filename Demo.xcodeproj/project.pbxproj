@@ -15,6 +15,7 @@
 		DE58777F29D67D61003EE872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE58777E29D67D61003EE872 /* Assets.xcassets */; };
 		DE58778229D67D61003EE872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE58778029D67D61003EE872 /* LaunchScreen.storyboard */; };
 		DE58778529D67D61003EE872 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE58778429D67D61003EE872 /* main.m */; };
+		DEA9200E29DA76BD00EF9839 /* Foo.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA9200D29DA76BD00EF9839 /* Foo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		DE58778129D67D61003EE872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE58778329D67D61003EE872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE58778429D67D61003EE872 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEA9200C29DA76BD00EF9839 /* Foo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Foo.h; sourceTree = "<group>"; };
+		DEA9200D29DA76BD00EF9839 /* Foo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Foo.m; sourceTree = "<group>"; };
 		F2D3935AABA2FB6457D81AB8 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +94,8 @@
 				DE58777629D67D5F003EE872 /* SceneDelegate.m */,
 				DE58777829D67D5F003EE872 /* ViewController.h */,
 				DE58777929D67D5F003EE872 /* ViewController.m */,
+				DEA9200C29DA76BD00EF9839 /* Foo.h */,
+				DEA9200D29DA76BD00EF9839 /* Foo.m */,
 				DE58777B29D67D5F003EE872 /* Main.storyboard */,
 				DE58777E29D67D61003EE872 /* Assets.xcassets */,
 				DE58778029D67D61003EE872 /* LaunchScreen.storyboard */,
@@ -218,6 +223,7 @@
 				DE58777429D67D5F003EE872 /* AppDelegate.m in Sources */,
 				DE58778529D67D61003EE872 /* main.m in Sources */,
 				DE58777729D67D5F003EE872 /* SceneDelegate.m in Sources */,
+				DEA9200E29DA76BD00EF9839 /* Foo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

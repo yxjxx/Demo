@@ -76,7 +76,7 @@ Error while processing /Users/yxj/Desktop/Demo/Demo/ViewController.m.
 xcodebuild clean
 xcodebuild -workspace /Users/yxj/Desktop/Demo/Demo.xcworkspace -scheme Demo -configuration Release | xcpretty -r json-compilation-database --output ./compile_commands.json
 ```
-在项目Build Setting中搜索index并将Enable Index-While-Building Functionality选项设置为NO
+
 
 
 
@@ -88,8 +88,25 @@ clang tool 会 autoDetectFromSource 去找 compile_commands.json 理论上不需
 /Users/yxj/Developer/LLVM/llvm-project/build/Debug/bin/LibToolingDemo /Users/yxj/Desktop/Demo/Demo/ViewController.m
 ```
 
--fmodule-format=raw
-会导致
-Assertion failed: (!HasError && "Cannot get value when an error exists!"), function getStorage, file Error.h, line 671.
-当前通过修改源码解决
+## 常见报错
 
+1. error: unknown argument: '-index-store-path'
+
+在项目Build Setting中搜索index并将Enable Index-While-Building Functionality选项设置为NO
+
+
+2. Assertion failed: (!HasError && "Cannot get value when an error exists!"), function getStorage, file Error.h, line 671.
+
+a. 未添加需要分析的文件参数
+b. -fmodule-format=raw  当前通过修改源码解决
+
+3. Assertion failed: (BlockScope.empty() && CurAbbrevs.empty() && "Block imbalance"), function ~BitstreamWriter, file BitstreamWriter.h, line 119.
+
+
+4. fatal error: 'stdarg.h' file not found
+
+https://stackoverflow.com/questions/20206290/fatal-error-stdarg-h-file-not-found
+
+5. Skipping xxx file, Compile command not found.
+
+无 compile_commands.json 或内容为空
