@@ -1,7 +1,7 @@
 # Demo
 
 ```
-xcodebuild clean & xcodebuild -workspace /Users/yxj/Desktop/Demo/Demo.xcworkspace -scheme Demo | xcpretty -r json-compilation-database --output ./compile_commands.json
+xcodebuild clean build -workspace Demo.xcworkspace -scheme Demo -configuration Debug | xcpretty -r json-compilation-database --output ./compile_commands.json
 ```
 
 ```
