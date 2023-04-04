@@ -100,7 +100,10 @@ clang tool 会 autoDetectFromSource 去找 compile_commands.json 理论上不需
   a. 未添加需要分析的文件参数
   b. -fmodule-format=raw  当前通过修改源码解决
 
-3. Assertion failed: (BlockScope.empty() && CurAbbrevs.empty() && "Block imbalance"), function ~BitstreamWriter, file BitstreamWriter.h, line 119.
+3. error: unknown argument: '-ivfsstatcache'
+error: unable to handle compilation, expected exactly one compiler job in ''; Assertion failed: (BlockScope.empty() && CurAbbrevs.empty() && "Block imbalance"), function ~BitstreamWriter, file BitstreamWriter.h, line 119.
+
+compile_commands.jso 批量移除 -ivfsstatcache /Users/yxj/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphoneos16.4-20E238-.sdkstatcache  
 
 
 4. fatal error: 'stdarg.h' file not found
