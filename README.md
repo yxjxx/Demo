@@ -110,6 +110,8 @@ compile_commands.jso 批量移除 -ivfsstatcache /Users/yxj/Library/Developer/Xc
 
 https://stackoverflow.com/questions/20206290/fatal-error-stdarg-h-file-not-found
 
+强行添加：commands.push_back("-I/Users/yxj/Developer/LLVM/llvm-project/clang/lib/Headers");
+
 5. Skipping xxx file, Compile command not found.
 
 无 compile_commands.json 或内容为空
