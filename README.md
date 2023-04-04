@@ -92,13 +92,13 @@ clang tool 会 autoDetectFromSource 去找 compile_commands.json 理论上不需
 
 1. error: unknown argument: '-index-store-path'
 
-在项目Build Setting中搜索index并将Enable Index-While-Building Functionality选项设置为NO
+    在待分析的项目的 Build Setting 中搜索index并将Enable Index-While-Building Functionality选项设置为NO
 
 
 2. Assertion failed: (!HasError && "Cannot get value when an error exists!"), function getStorage, file Error.h, line 671.
 
-a. 未添加需要分析的文件参数
-b. -fmodule-format=raw  当前通过修改源码解决
+  a. 未添加需要分析的文件参数
+  b. -fmodule-format=raw  当前通过修改源码解决
 
 3. Assertion failed: (BlockScope.empty() && CurAbbrevs.empty() && "Block imbalance"), function ~BitstreamWriter, file BitstreamWriter.h, line 119.
 
